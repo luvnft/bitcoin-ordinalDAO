@@ -2,13 +2,13 @@ require("dotenv").config();
 var HDWalletProvider = require("@truffle/hdwallet-provider");
 
 var mnemonic = process.env.MNEMONIC;
-var publicTestnetNode = "https://public-node.testnet.rsk.co/";
+var publicMainnetNode = "https://public-node.rsk.co";
 
 module.exports = {
   networks: {
-    rskTestnet: {
-      provider: () => new HDWalletProvider(mnemonic, publicTestnetNode),
-      network_id: 31,
+    rskMainnet: {
+      provider: () => new HDWalletProvider(mnemonic, publicMainnetNode),
+      network_id: 30,
 
       networkCheckTimeout: 1e9,
     },
